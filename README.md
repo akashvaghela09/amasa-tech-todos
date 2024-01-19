@@ -20,7 +20,7 @@ A Todo App built using React.js, Tailwind CSS, and Redux Toolkit fetches dummy d
     ```
     cd amasa-tech-todos && npm install
     ```
-3. Start the backend server.
+3. Start the development server.
     ```
     npm start
     ```
