@@ -6,7 +6,7 @@ import { setTodoList } from "../redux/app/appSlice";
 const AddTaskModal = ({ toggleModal }) => {
   const dispatch = useDispatch();
   const [task, setTask] = useState("");
-  const [details, setDetails] = useState("");
+  const [detail, setDetail] = useState("");
   const inputRef = useRef(null);
 
   // Get todoList from redux store
@@ -20,7 +20,7 @@ const AddTaskModal = ({ toggleModal }) => {
     let taskObj = {
       id: uuid(),
       title: task,
-      details: details,
+      detail: detail,
       completed: false,
     };
 
@@ -29,7 +29,7 @@ const AddTaskModal = ({ toggleModal }) => {
 
     // Reset task and details
     setTask("");
-    setDetails("");
+    setDetail("");
 
     // Close modal
     toggleModal();
@@ -63,8 +63,8 @@ const AddTaskModal = ({ toggleModal }) => {
           <p className="text-xl font-bold">Task Details</p>
           <textarea
             rows={5}
-            value={details}
-            onChange={(e) => setDetails(e.target.value)}
+            value={detail}
+            onChange={(e) => setDetail(e.target.value)}
             placeholder="Maths, Physics, History"
             className="border-2 border-black p-2 text-xl w-full"
           />
