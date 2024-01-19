@@ -5,6 +5,7 @@ import { AddTaskModal } from "./AddTaskModal";
 const AddButton = () => {
   const [showModal, setShowModal] = useState(false);
 
+  // Toggle modal visibility 
   const toggleModal = () => {
     setShowModal(!showModal);
   };

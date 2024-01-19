@@ -25,7 +25,7 @@ const AddTaskModal = ({ toggleModal }) => {
     };
 
     // Add task to todoList
-    dispatch(setTodoList([ taskObj ,...todoList]));
+    dispatch(setTodoList([taskObj, ...todoList]));
 
     // Reset task and details
     setTask("");
@@ -38,7 +38,7 @@ const AddTaskModal = ({ toggleModal }) => {
   const handleKeyDown = (e) => {
     // Submit task on enter key press
     if (e.key === "Enter") handleTaskForm();
-  }
+  };
 
   useEffect(() => {
     // Focus on input when modal is opened
@@ -69,7 +69,7 @@ const AddTaskModal = ({ toggleModal }) => {
             className="border-2 border-black p-2 text-xl w-full"
           />
         </div>
-        
+
         <div className="flex gap-2 mt-4">
           <button
             onClick={() => handleTaskForm()}

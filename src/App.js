@@ -12,9 +12,12 @@ function App() {
   const fetchDummyData = async () => {
     let url = "https://jsonplaceholder.typicode.com/todos";
     let { data } = await axios.get(url);
+
+    // Save data to Redux Store
     dispatch(setTodoList(data));
   };
 
+  // Fetch dummy data from API on Page Load
   useEffect(() => {
     fetchDummyData();
   }, []);

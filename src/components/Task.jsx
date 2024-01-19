@@ -11,12 +11,18 @@ const Task = ({ id, title, detail = "", completed }) => {
   const dispatch = useDispatch();
   const { todoList } = useSelector((state) => state.app);
 
+  // Delete task from todoList
   const handleDelete = () => {
+    // Filter out the task with the id
     const newTodoList = todoList.filter((task) => task.id !== id);
+
+    // Update the todoList
     dispatch(setTodoList(newTodoList));
   };
 
+  // Toggle completed status
   const handleComplete = () => {
+    // Toggle the completed status of the task with the id
     const newTodoList = todoList.map((task) => {
       if (task.id === id) {
         return {
@@ -27,6 +33,7 @@ const Task = ({ id, title, detail = "", completed }) => {
       return task;
     });
 
+    // Update the todoList
     dispatch(setTodoList(newTodoList));
   };
 
@@ -40,12 +47,14 @@ const Task = ({ id, title, detail = "", completed }) => {
         >
           {title}
         </p>
+
         {detail.length > 0 && (
           <p className={`text-sm line-clamp-2 ${completed && "line-through"}`}>
             {detail}
           </p>
         )}
       </div>
+
       <div className="border-t-2 border-black flex divide-x-2 divide-black">
         <span
           onClick={() => handleDelete()}

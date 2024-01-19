@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Initial State of the App
 const initialState = {
   todoList: [],
 };
 
+// Create Slice (Reducers)
 const appSlice = createSlice({
   name: "app",
   initialState,
@@ -14,6 +16,8 @@ const appSlice = createSlice({
   },
 });
 
+// Export Actions (Functions)
 export const { setTodoList } = appSlice.actions;
 
+// Export Reducer (State)
 export default appSlice.reducer;
